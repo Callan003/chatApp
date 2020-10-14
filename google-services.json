@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "646628502433",
+    "firebase_url": "https://chatapp-2a35a.firebaseio.com",
+    "project_id": "chatapp-2a35a",
+    "storage_bucket": "chatapp-2a35a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646628502433:android:478afad173704a1fe339e0",
+        "android_client_info": {
+          "package_name": "calinstroescu.nodrinkanddrivechatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646628502433-jas18d4l4o6f3b1jjfmd40tnmji6spkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSW67X8KzE2c6KJhizhe5RyW10Drz4sbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646628502433-jas18d4l4o6f3b1jjfmd40tnmji6spkv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
