@@ -14,6 +14,9 @@
   "engines": {
     "node": "8"
   },
+  "browser": {
+    "https": false
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~10.0.0",

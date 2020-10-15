@@ -8,6 +8,12 @@ import { map, tap } from 'rxjs/operators';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import * as moment from 'moment';
 
+import 'src/typingdna.js';
+declare var TypingDNA: any;
+
+import 'src/typingdnaclient.js';
+declare var TypingDNAClient: any;
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.page.html',
@@ -22,6 +28,8 @@ export class ChatPage implements OnInit {
   chat = null;
   currentDate: moment.Moment;
   breakPoints = [];
+  typingDnaRecorder = null;
+  typingDnaClient = null;
 
   @ViewChild(IonContent) content: IonContent;
   @ViewChild('input', { read: ElementRef }) msgInput: ElementRef;
@@ -31,9 +39,14 @@ export class ChatPage implements OnInit {
     private auth: AuthService,
     private chatService: ChatService,
     private router: Router,
-    private camera: Camera) { }
+    private camera: Camera) {
+      this.typingDnaRecorder = new TypingDNA();
+      // this.typingDnaClient =
+      // new TypingDNAClient('d986e0ea9e1c9692de7e598e8177285c', 'd406188db3afdc8ec121557bdf69d209', 'api.typingdna.com');
+    }
 
   ngOnInit(): void {
+    this.typingDnaRecorder.addTarget('messageTextarea');
     this.route.params.subscribe(data => {
       this.chatService.getOneGroup(data.id).subscribe(res => {
         this.chat = res;
@@ -140,4 +153,7 @@ export class ChatPage implements OnInit {
     });
   }
 
+  showTypingDNA() {
+    console.log(this.typingDnaRecorder.getTypingPattern());
+  }
 }

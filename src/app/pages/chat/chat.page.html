@@ -53,12 +53,13 @@
   <ion-toolbar color="light">
     <ion-row no-padding align-items-center>
       <ion-col size="9" class="col-msg-input ion-no-margin">
-        <textarea class="message-input" #input rows="1" maxLength="500" (keyup)="resize()" [(ngModel)]="newMsg"></textarea>
+        <textarea class="message-input" id='messageTextarea' #input rows="1" maxLength="500" (keyup)="resize()" [(ngModel)]="newMsg"></textarea>
       </ion-col>
       <ion-col size="2" text-center>
         <ion-button expand="block" fill="clear" color="primary" [disabled]="newMsg === ''" class="msg-btn" (click)="sendMessage()">
           <ion-icon name="send" slot="icon-only"></ion-icon>
         </ion-button>
+        <ion-button (click)="showTypingDNA()">TYPINGDNA</ion-button>
       </ion-col>
     </ion-row>
   </ion-toolbar>
